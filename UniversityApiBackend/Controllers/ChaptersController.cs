@@ -51,6 +51,7 @@ namespace UniversityApiBackend.Controllers
         }
 
         // PUT: api/Chapters/5
+        //Ingresar api rest para envio de de datos.
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutChapter(int id, Chapter chapter)

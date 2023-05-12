@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UniversityApiBackend.Helpers;
 using UniversityApiBackend.Models.DataModels;
@@ -48,21 +50,30 @@ namespace UniversityApiBackend.Controllers
 
                     Token = JwtHelpers.GenTokenKey(new UserTokens()
                     {
-                        UserName: user.Name,
-                        EmailId: user.Email,
-
-                    });
+                        UserName = user.Name,
+                        EmailId = user.Email,
+                        Id = user.Id,
+                        GuidId = Guid.NewGuid(),
+                    }, _jwtSettings);
                 }
-
+                else
+                {
+                    return BadRequest("Wrong Password");
+                }
+                return Ok(Token);
 
             }catch (Exception ex)
             {
-
+                throw new Exception("GetToken error", ex);
             }
         }
 
-
-
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
+        public IActionResult GetUserList()
+        {
+            return Ok(Logins);
+        }
 
     }
 }

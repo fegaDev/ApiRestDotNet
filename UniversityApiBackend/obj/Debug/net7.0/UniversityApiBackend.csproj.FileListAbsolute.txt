@@ -274,3 +274,4 @@ C:\Users\Peloncho\Desktop\Backend\University\UniversityApiBackend\bin\Debug\net7
 C:\Users\Peloncho\Desktop\Backend\University\UniversityApiBackend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Peloncho\Desktop\Backend\University\UniversityApiBackend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Peloncho\Desktop\Backend\University\UniversityApiBackend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Peloncho\Desktop\Backend\University\UniversityApiBackend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
